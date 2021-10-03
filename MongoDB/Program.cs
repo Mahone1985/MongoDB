@@ -9,24 +9,16 @@ namespace MongoDB
         static void Main(string[] args)
         {
             //NOTES:
-            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            //My DB details
-            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            //Wadders_88 | d7BlSqKCqqfCHY4Z | mysampledb-shard-00-02.xcrwt.mongodb.net:27017 | Cluster name = mySampleDB
-            //Database name(s) = sample_airbnb | sample_analytics | sample_geospatial | sample_mflix | sample_restaurants | sample_supplies | sample_training | sample_weatherdata
-            //Collections (aka tables) = listed under each database ^
-            //Connection string = mongodb+srv://Wadders_88:O2z4HTSyLDrecSeo@mysampledb.xcrwt.mongodb.net/mysampledb?retryWrites=true&w=majority
-            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             //Tom's DB details
             //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            //Wadders_88 | d7BlSqKCqqfCHY4Z | sampledb-shard-00-02.egd8v.mongodb.net:27017 | Cluster name = sampledb
+            //Mahone_1985 | 7f2AHeK06ScpAePs | sampledb-shard-00-02.egd8v.mongodb.net:27017 | Cluster name = sampledb
             //Database name(s) = sample_airbnb | sample_analytics | sample_geospatial | sample_mflix | sample_restaurants | sample_supplies | sample_training | sample_weatherdata
             //Collections (aka tables) = listed under each database ^
             //Connection string = mongodb+srv://Wadders_88:d7BlSqKCqqfCHY4Z@sampledb.egd8v.mongodb.net/sampledb?retryWrites=true&w=majority
             //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
             //MongoDB connection
-            var settings = MongoClientSettings.FromConnectionString("mongodb+srv://Wadders_88:d7BlSqKCqqfCHY4Z@sampledb.egd8v.mongodb.net/sampledb?retryWrites=true&w=majority");
+            var settings = MongoClientSettings.FromConnectionString("mongodb+srv://Mahone_1985:7f2AHeK06ScpAePs@sampledb.egd8v.mongodb.net/sampledb?retryWrites=true&w=majority");
             var client = new MongoClient(settings);
             var database = client.GetDatabase("sample_training");
 
