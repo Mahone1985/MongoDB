@@ -71,19 +71,20 @@ namespace MongoDB
             Console.WriteLine("");
             Console.WriteLine("");
 
-            //BsonDoc for dbstats
-            var command = new BsonDocument { { "dbstats", 1 } };
-            var res = database.RunCommand<BsonDocument>(command);
-            Console.WriteLine("dbstats = {0}", res.ToJson());
-            Console.WriteLine("");
-            Console.WriteLine("");
+            ////BsonDoc for dbstats
+            //var command = new BsonDocument { { "dbstats", 1 } };
+            //var res = database.RunCommand<BsonDocument>(command);
+            //Console.WriteLine("dbstats = {0}", res.ToJson());
+            //Console.WriteLine("");
+            //Console.WriteLine("");
 
-            //BsonDoc with filter for companies called Facebook
+
+            //BsonDoc with filter count for companies called Facebook
 
             var companies = database.GetCollection<BsonDocument>("companies");
-            var filter = Builders<BsonDocument>.Filter.Eq("name", "Facebook");
-            var doc = companies.Find(filter).FirstOrDefault();
-            Console.WriteLine(doc.ToString());
+            var filter1 = companies.Find(Builders<BsonDocument>.Filter.Eq("name", "Facebook"));
+            var filter2 = companies.Find(Builders<BsonDocument>.Filter.Eq("name", "Wetpaint"));
+            Console.WriteLine("Companies count = {0}", filter1.CountDocuments() + filter2.CountDocuments());
 
 
 
