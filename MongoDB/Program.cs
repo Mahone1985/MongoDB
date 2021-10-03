@@ -86,6 +86,9 @@ namespace MongoDB
             var filter2 = companies.Find(Builders<BsonDocument>.Filter.Eq("name", "Wetpaint"));
             Console.WriteLine("Companies count = {0}", filter1.CountDocuments() + filter2.CountDocuments());
 
+            var filter3 = companies.Find(Builders<BsonDocument>.Filter.Eq("name"));
+
+
 
 
 
